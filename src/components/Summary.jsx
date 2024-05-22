@@ -10,7 +10,7 @@ export default function Summary({ watched }) {
   ).toFixed(1);
   const avgRuntime = average(
     watched.map((movie) => Number(movie.Runtime.split(" ").at(0)))
-  );
+  ).toFixed(0);
 
   return (
     <div className="summary">
@@ -18,7 +18,7 @@ export default function Summary({ watched }) {
       <div>
         <p>
           <span>#️⃣</span>
-          <span>{watched.length} movies</span>
+          <span>{`${watched.length} movies`}</span>
         </p>
         <p>
           <span>⭐️</span>
@@ -30,7 +30,7 @@ export default function Summary({ watched }) {
         </p>
         <p>
           <span>⏳</span>
-          <span>{avgRuntime} min</span>
+          <span>{`${avgRuntime} min`}</span>
         </p>
       </div>
     </div>
