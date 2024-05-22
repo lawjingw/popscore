@@ -14,7 +14,7 @@ export function useMovies(query) {
         setError("");
         setIsLoading(true);
         const response = await fetch(
-          `http://www.omdbapi.com/?apikey=${OMDB_KEY}&s=${query}`
+          `https://www.omdbapi.com/?apikey=${OMDB_KEY}&s=${query}`
         );
         if (!ignore) {
           const movies = await response.json();
